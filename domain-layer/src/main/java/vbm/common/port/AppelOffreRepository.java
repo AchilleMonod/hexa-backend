@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface AppelOffreRepository {
 
-    List<AppelOffreBO> getAllAppelOffre(String id);
+    List<AppelOffreBO> getAllAppelOffreByBureauId(Long id);
+
+    AppelOffreBO getById(Long id);
 }

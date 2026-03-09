@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BureauEtudeBO {
 
-    private String id;
+    private Long id;
     private String nom;
     private String description;
 }

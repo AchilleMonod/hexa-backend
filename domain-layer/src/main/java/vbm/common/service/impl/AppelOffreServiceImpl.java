@@ -20,9 +20,9 @@ public class AppelOffreServiceImpl implements AppelOffreService {
 
     @Override
     public List<AppelOffreBO> getAllAppelOffre(BureauEtudeBO bureauEtude) {
-        if(bureauEtude == null || bureauEtude.getId().isBlank()){
+        if(bureauEtude == null){
             throw new AppelOffreServiceException("Bureau d'etude non valide");
         }
-        return appelOffreRepository.getAllAppelOffre(bureauEtude.getId());
+        return appelOffreRepository.getAllAppelOffreByBureauId(bureauEtude.getId());
     }
 }

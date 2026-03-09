@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Data
 @Builder(toBuilder = true)
 @AllArgsConstructor
@@ -15,12 +17,12 @@ public class AppelOffreDTO {
 
     @NotNull
     @Schema(description = "Identifiant de l'appel d'offre", example = "1")
-    private String id;
+    private Long id;
 
     private String nom;
     private String description;
-    private String dateDebut;
-    private String dateFin;
+    private LocalDate dateDebut;
+    private LocalDate dateFin;
     private String statut;
 
 }

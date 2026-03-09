@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class BureauEtudeDTO {
 
     @NotNull
-    private String id;
+    private Long id;
     private String nom;
     private String description;
 }

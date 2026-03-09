@@ -3,7 +3,7 @@ package vbm.common.database.adapter;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 import vbm.common.database.dao.AppelOffreDAO;
-import vbm.common.database.mapper.AppelOffreMapper;
+import vbm.common.database.mapper.AppelOffreEntityMapper;
 import vbm.common.model.AppelOffreBO;
 import vbm.common.port.AppelOffreRepository;
 
@@ -15,15 +15,18 @@ public class AppelOffreRepositoryImpl implements AppelOffreRepository {
 
     private final AppelOffreDAO appelOffreDAO;
 
-    private final AppelOffreMapper appelOffreMapper;
+    private final AppelOffreEntityMapper appelOffreEntityMapper;
 
     @Override
     public List<AppelOffreBO> getAllAppelOffreByBureauId(Long id) {
-        return List.of();
+        return appelOffreDAO.findByBureauEtudeId(id)
+                .stream()
+                .map(appelOffreEntityMapper::toBO)
+                .toList();
     }
 
     @Override
     public AppelOffreBO getById(Long id) {
-        return appelOffreMapper.toBO(appelOffreDAO.findById(id).orElse(null));
+        return appelOffreEntityMapper.toBO(appelOffreDAO.findById(id).orElse(null));
     }
 }

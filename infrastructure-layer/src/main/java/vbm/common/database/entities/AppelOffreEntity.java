@@ -5,6 +5,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -31,4 +33,8 @@ public class AppelOffreEntity {
 
     @Column(name = "statut")
     private String statut;
+
+    @ManyToOne
+    @JoinColumn(name = "bureau_etude_id")
+    private BureauEtudeEntity bureauEtude;
 }

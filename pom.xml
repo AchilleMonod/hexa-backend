@@ -29,6 +29,7 @@
         <apache.httpclient5.version>5.4.2</apache.httpclient5.version>
         <lombok.version>1.18.36</lombok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+        <dependency-check.version>12.2.0</dependency-check.version>
         <jacoco.version>0.8.12</jacoco.version>
         <swagger.version>2.2.3</swagger.version>
 
@@ -125,6 +126,14 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>${dependency-check.version}</version>
+                <goals>
+                    <goal>check</goal>
+                </goals>
+            </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>

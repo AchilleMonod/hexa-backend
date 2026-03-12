@@ -1,0 +1,19 @@
+package vbm.common.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import vbm.common.model.enums.RoleEnum;
+
+@Data
+@Builder(toBuilder = true)
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserBO {
+    private Long id;
+    private String email;
+    private String password;
+    private RoleEnum role;
+}
+
